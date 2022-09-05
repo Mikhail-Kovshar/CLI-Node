@@ -22,6 +22,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
           phone
         );
         console.log(newContact);
+        
         break;
       case "remove":
         const removedContact = await contactOperations.removeContact(id);
@@ -29,6 +30,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
           throw new Error(`Contact with id: ${id} not found`);
         }
         console.log(removedContact);
+        
         break;
       default:
         console.warn("\x1B[31m Unknown action type!");
